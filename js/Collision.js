@@ -2,8 +2,6 @@ class Collision extends Polygon {
 
     constructor(points, color, ejection, flexibility) {
         super(points);
-
-        this.points = points;
         this.color = color;
         this.ejection = ejection;
         this.dy = 0;
@@ -29,7 +27,7 @@ class Collision extends Polygon {
             parents = [];
         }
         parents.push(this);
-        for (let e of levels[actualLevel].getCollisions()) {
+        for (let e of level.getCollisions()) {
             if (e != this && parents.indexOf(e) == -1 && e.getFlexibility() > 0 && e.isPolygonsIntersecting(this)) {
                 e.setDirectionY(this.dy * e.flexibility, parents);
             }

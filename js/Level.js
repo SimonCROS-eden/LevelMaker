@@ -1,12 +1,16 @@
 class Level {
-    constructor(collisions, plateforms, coins, actionzones, foreground, spawnpoint, backgroundColor) {
-        this.setCollisions(collisions);
+    constructor(collisions, rectangularCollisions, plateforms, coins, actionzones, foreground, spawnpoint, backgroundColor) {
+        this.setCollisions(collisions.concat(rectangularCollisions));
         this.setPlateforms(plateforms);
         this.setCoins(coins);
         this.setForegroundElements(foreground);
         this.setActionZones(actionzones);
+        this.setSpawnPoint(spawnpoint);
         this.backgroundColor = backgroundColor;
-        this.spawnpoint = spawnpoint;
+        this.seralized = JSON.stringify(this);
+
+        // ONLY SERALIZATION
+        this.rectangularCollisions = rectangularCollisions;
     }
 
     setActionZones(actionzones) {
@@ -43,6 +47,10 @@ class Level {
 
     getSpawnPoint() {
         return this.spawnpoint;
+    }
+
+    setSpawnPoint(spawnpoint) {
+        this.spawnpoint = spawnpoint;
     }
 
     getCoins() {
@@ -85,5 +93,21 @@ class Level {
         this.getForegroundElements().forEach(e => {
             e.draw();
         }, this);
+    }
+
+    seralize() {
+        return this.seralized;
+    }
+
+    static unserialize(object) {
+        let collisions = Array.from(object.collisions, e => new Collision(e.points, e.color, e.ejection, e.flexibility)),
+            rectangularCollisions = Array.from(object.rectangularCollisions, e => new rectangularCollisions(Location.unserialize(e.location), e.size, e.color, e.ejection, e.flexibility, e.gravity, e.resistance)),
+            plateforms = Array.from(object.plateforms, e => new Plateforme(Location.unserialize(e.location), Point.unserialize(e.size), e.color)),
+            coins = Array.from(object.coins, e => new Coin(Location.unserialize(e.location))),
+            actionzones = Array.from(object.actionzones, e => new ActionZone(e.points, e.color, e.gameaction)),
+            foreground = Array.from(object.foreground, e => new ForegroundElement(e.points, e.color)),
+            spawnpoint = new Location(object.spawnpoint.x, object.spawnpoint.y);
+
+        return new Level(collisions, rectangularCollisions, plateforms, coins, actionzones, foreground, spawnpoint, object.backgroundColor);
     }
 }

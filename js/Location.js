@@ -7,6 +7,10 @@ class Location {
         Location.size = {width, height};
     }
 
+    static unserialize(location) {
+        return new Location(location.x, location.y)
+    }
+
     constructor(x, y) {
         this.x = x;
         this.y = y;

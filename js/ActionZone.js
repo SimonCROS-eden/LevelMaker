@@ -2,7 +2,6 @@ class ActionZone extends Polygon {
     constructor(points, color, gameaction) {
         super(points);
 
-        this.points = points;
         this.color = color;
         this.gameaction = gameaction;
     }
@@ -16,7 +15,7 @@ class ActionZone extends Polygon {
     }
 
     callGameAction() {
-        this.getGameAction()();
+        GameAction.getById(this.getGameAction())();
     }
 
     getSize() {

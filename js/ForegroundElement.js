@@ -3,7 +3,6 @@ class ForegroundElement extends Polygon {
     constructor(points, color) {
         super(points);
 
-        this.points = points;
         this.color = color;
     }
 

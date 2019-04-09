@@ -1,6 +1,10 @@
 class Coin extends Polygon {
 
     constructor(location) {
+        if (!Location.prototype.isPrototypeOf(location)) {
+            location = new Location(location.x, location.y);
+        }
+
         let size = Location.size.width / 30;
         let pointsDeplacements = [
             [-size / 2, -size / 2],

@@ -166,7 +166,7 @@ class Personnage extends Polygon {
     }
 
     reload() {
-        let location = levels[actualLevel].getSpawnPoint();
+        let location = level.getSpawnPoint();
         this.setLocation(location);
         this.reloadPoints();
         this.keyboard = {
@@ -188,7 +188,7 @@ class Personnage extends Polygon {
     collision() {
         let tr = [];
         this.reloadPoints();
-        for (let e of levels[actualLevel].getCollisions()) {
+        for (let e of level.getCollisions()) {
             if (e.isPolygonsIntersecting(this)) {
                 tr.push(e);
             }
@@ -198,7 +198,7 @@ class Personnage extends Polygon {
 
     actionZone() {
         this.reloadPoints();
-        for (let e of levels[actualLevel].getActionZones()) {
+        for (let e of level.getActionZones()) {
             if (e.isPolygonsIntersecting(this)) {
                 e.callGameAction();
             }
@@ -206,7 +206,7 @@ class Personnage extends Polygon {
     }
 
     takeCoins() {
-        for (let e of levels[actualLevel].getCoins()) {
+        for (let e of level.getCoins()) {
             if (!e.isTaked() && e.isPolygonsIntersecting(this)) {
                 e.setTaked(true);
                 this.gold++;
@@ -222,7 +222,7 @@ class Personnage extends Polygon {
             return false;
         }
         var ground = false;
-        levels[actualLevel].getPlateforms().forEach(e => {
+        level.getPlateforms().forEach(e => {
             if (e.isUnderPlayer(this)) {
                 if (e.distanceTop(this) > -5) {
                     if (this.jump <= 1) {

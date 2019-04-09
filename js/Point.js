@@ -20,4 +20,8 @@ class Point extends Location {
     static fromLocation(location, solid) {
         return new Point(location.getX(), location.getY(), solid);
     }
+
+    static unserialize(point) {
+        return new Point(point.x, point.y, point.solid)
+    }
 }
