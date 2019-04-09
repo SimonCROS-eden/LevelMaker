@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tests canvas</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script type="text/javascript" src="/js/vector.js"></script>
+</head>
+
+<body>
+    <!-- <iframe width="600" height="450" frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJu85IDyrA9EcRo9rQQHtTa-I&key=AIzaSyCXBPajJUZbJClCuIcjDStKCACop6017G0" allowfullscreen></iframe> -->
+    <!-- <img src="https://geekreply.com/wp-content/uploads/2015/07/Super-Mario-Maker1.jpg" alt="" height="290"> -->
+    <canvas id="canvas" width="888" height="500"></canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById('canvas');
+    </script>
+
+    <script type="text/javascript" src="/js/GameAction.js"></script>
+
+    <script type="text/javascript" src="/js/Location.js"></script>
+    <script type="text/javascript" src="/js/Point.js"></script>
+
+    <script type="text/javascript" src="/js/Collidable.js"></script>
+    <script type="text/javascript" src="/js/Polygon.js"></script>
+    <script type="text/javascript" src="/js/ForegroundElement.js"></script>
+    <script type="text/javascript" src="/js/Coin.js"></script>
+    <script type="text/javascript" src="/js/Plateforme.js"></script>
+    <script type="text/javascript" src="/js/ActionZone.js"></script>
+
+    <script type="text/javascript" src="/js/Collision.js"></script>
+    <script type="text/javascript" src="/js/RectangularCollision.js"></script>
+    <script type="text/javascript" src="/js/Personnage.js"></script>
+    <script type="text/javascript" src="/js/Level.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+
+    <script type="text/javascript">
+        var tl = "";
+        canvas.addEventListener("click", (e) => {
+            tl += "new Point(" + (Math.round(((e.pageX - canvas.offsetLeft) * Location.originalSize.width / Location.size.width) / 10) * 10) + ", " + (Math.round(((e.pageY - canvas.offsetTop) * Location.originalSize.height / Location.size.height) / 10) * 10) + "), ";
+            console.log(tl);
+        });
+    </script>
+</body>
+
+</html>
