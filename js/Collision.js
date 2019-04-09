@@ -7,6 +7,7 @@ class Collision extends Polygon {
         this.dy = 0;
         this.dx = 0;
         this.flexibility = flexibility;
+        this.hover = false;
     }
 
     getLocation() {
@@ -51,6 +52,23 @@ class Collision extends Polygon {
         }
         ctx.closePath();
         ctx.fill();
+
+        if (this.hover) {
+            this.hoverStyle();
+        }
+
         ctx.restore();
+    }
+
+    hoverStyle() {
+        ctx.beginPath();
+        ctx.strokeStyle = "black";
+        ctx.moveTo(this.points[0].getRenderX(), this.points[0].getRenderY() + (this.points[0].isSolid() ? 0 : this.dy));
+        for (let point of this.points) {
+            ctx.lineTo(point.getRenderX(), point.getRenderY() + (point.isSolid() ? 0 : this.dy));
+        }
+        ctx.closePath();
+        ctx.lineWidth = 2;
+        ctx.stroke();
     }
 }
