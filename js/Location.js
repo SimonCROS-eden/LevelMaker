@@ -46,6 +46,14 @@ class Location {
         this.y -= y;
     }
 
+    getX() {
+        return this.x;
+    }
+
+    getY() {
+        return this.y;
+    }
+
     getRenderX() {
         return this.getX() * Location.size.width / Location.originalSize.width;
     }

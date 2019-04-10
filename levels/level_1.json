@@ -3,25 +3,25 @@
         "points": [{
             "x": 0,
             "y": 460,
-            "resistance": 0,
+            "flexibility": 0,
             "restore": false,
             "solid": true
         }, {
             "x": 888,
             "y": 460,
-            "resistance": 0,
+            "flexibility": 0,
             "restore": false,
             "solid": true
         }, {
             "x": 888,
             "y": 500,
-            "resistance": 0,
+            "flexibility": 0,
             "restore": false,
             "solid": true
         }, {
             "x": 0,
             "y": 500,
-            "resistance": 0,
+            "flexibility": 0,
             "restore": false,
             "solid": true
         }],
@@ -34,29 +34,60 @@
         "points": [{
             "x": 200,
             "y": 370,
-            "resistance": 10,
-            "restore": false,
+            "flexibility": 10,
+            "restore": true,
             "solid": false
         }, {
             "x": 240,
             "y": 370,
-            "resistance": 10,
-            "restore": false,
+            "flexibility": 10,
+            "restore": true,
             "solid": false
         }, {
             "x": 240,
             "y": 400,
-            "resistance": 10,
-            "restore": false,
+            "flexibility": 10,
+            "restore": true,
             "solid": false
         }, {
             "x": 200,
             "y": 400,
-            "resistance": 10,
-            "restore": false,
+            "flexibility": 10,
+            "restore": true,
             "solid": false
         }],
         "color": "gray",
+        "ejection": 2,
+        "dy": 0,
+        "dx": 0,
+        "flexibility": 0
+    },{
+        "points": [{
+            "x": 200,
+            "y": 400,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 240,
+            "y": 400,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 240,
+            "y": 430,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 200,
+            "y": 430,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }],
+        "color": "blue",
         "ejection": 0,
         "dy": 0,
         "dx": 0,

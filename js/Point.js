@@ -1,9 +1,9 @@
 class Point extends Location {
 
-    constructor(x, y, resistance, restore, solid) {
+    constructor(x, y, flexibility, restore, solid) {
         super(x, y);
         this.restore = restore;
-        this.resistance = resistance + 1;
+        this.flexibility = flexibility + 1;
         this.originalX = x;
         this.originalY = y;
         this.dx = 0;
@@ -33,27 +33,27 @@ class Point extends Location {
     }
 
     getX() {
-        return this.x + (this.dx / this.resistance);
+        return this.x + (this.dx / this.flexibility);
     }
 
     getY() {
-        return this.y + (this.dx / this.resistance);
+        return this.y + (this.dx / this.flexibility);
     }
 
     actualise = () => {
         if (this.dx > 0.1 || this.dx < 0.1) {
-            this.dx += (0 - this.dx) / this.resistance;
+            this.dx += (0 - this.dx) / this.flexibility;
             this.addX(this.dx);
         }
         if (this.dy > 0.1 || this.dy < 0.1) {
-            this.dy += (0 - this.dy) / this.resistance;
-            this.addX(this.dy);
+            this.dy += (0 - this.dy) / this.flexibility;
+            this.addY(this.dy);
         }
-        if (this.x - this.originalX > 0.1) {
-            this.x += (this.x - this.originalX) / this.resistance;
+        if (this.restore && this.x - this.originalX > 0.1) {
+            this.x -= (this.x - this.originalX) / this.flexibility;
         }
-        if (this.y - this.originalY > 0.1) {
-            this.y += (this.y - this.originalY) / this.resistance;
+        if (this.restore && this.y - this.originalY > 0.1) {
+            this.y -= (this.y - this.originalY) / this.flexibility;
         }
     }
 
@@ -66,6 +66,6 @@ class Point extends Location {
     }
 
     static unserialize(point) {
-        return new Point(point.x, point.y, point.resistance, point.restore, point.solid);
+        return new Point(point.x, point.y, point.flexibility, point.restore, point.solid);
     }
 }
