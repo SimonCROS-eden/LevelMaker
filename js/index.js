@@ -17,6 +17,8 @@ var lastCalledTime = null;
 let ctx = canvas.getContext('2d');
 ctx.save();
 
+console.log(Collision.isPointOnSegment(new Point(100, 0, 0, false), new Point(200, 0, 0, false), new Point(150, 0, 0, false)));
+
 var actualLevel = 1;
 var level = null;
 var perso = null;

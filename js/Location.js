@@ -55,11 +55,11 @@ class Location {
     }
 
     getRenderX() {
-        return this.getX() * Location.size.width / Location.originalSize.width;
+        return Math.floor(this.getX() * Location.size.width / Location.originalSize.width);
     }
 
     getRenderY() {
-        return this.getY() * Location.size.height / Location.originalSize.height;
+        return Math.floor(this.getY() * Location.size.height / Location.originalSize.height);
     }
 
     clone() {
