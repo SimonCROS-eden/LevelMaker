@@ -92,6 +92,68 @@
         "dy": 0,
         "dx": 0,
         "flexibility": 0
+    },{
+        "points": [{
+            "x": 200,
+            "y": 400,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 240,
+            "y": 400,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 240,
+            "y": 430,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 200,
+            "y": 430,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }],
+        "color": "blue",
+        "ejection": 0,
+        "dy": 0,
+        "dx": 0,
+        "flexibility": 0
+    },{
+        "points": [{
+            "x": 200,
+            "y": 400,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 240,
+            "y": 400,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 240,
+            "y": 430,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 200,
+            "y": 430,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }],
+        "color": "blue",
+        "ejection": 0,
+        "dy": 0,
+        "dx": 0,
+        "flexibility": 0
     }],
     "plateforms": [],
     "rectangularCollisions": [],

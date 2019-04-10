@@ -26,23 +26,19 @@ class Point extends Location {
         }
     }
 
-    setDirectionY(dy, parents) {
+    setDirectionY(dy, used) {
         if (!this.isSolid()) {
             this.dy += dy;
-            if (!parents) {
-                var parents = [];
+            if (!used) {
+                var used = [];
             }
-            parents.push(this)
+            used.push(this)
             for (let collision of level.getCollisions()) {
                 if (collision.isPolygonsIntersecting(this)) {
                     for (let point of collision.getPoints()) {
-                        if (point != this && parents.indexOf(point) == -1 && point.getRenderX() == this.getRenderX() && point.getRenderY() == this.getRenderY()) {
-                            point.setDirectionY(dy, parents);
-                        }
-                    }
-                    for (let point of Collidable.getLinesCollide(collision, this)) {
-                        if (point != this && parents.indexOf(point) == -1 && point.getRenderX() == this.getRenderX() && point.getRenderY() == this.getRenderY()) {
-                            point.setDirectionY(dy, parents);
+                        if (point != this && used.indexOf(point) == -1 && point.getRenderX() == this.getRenderX() && point.getRenderY() == this.getRenderY()) {
+                            point.setDirectionY(dy, used);
+                            used.push(point);
                         }
                     }
                 }
