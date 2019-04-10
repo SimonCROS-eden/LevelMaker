@@ -64,17 +64,12 @@ class Coin extends Polygon {
         return this.imageSize;
     }
 
-    draw() {
-        if (this.taked) {
-            return;
-        }
-        let size = Location.size.width / 30;
-        this.size = size;
+    reloadPositions() {
         let pointsDeplacements = [
-            [-size / 2, -size / 2],
-            [size / 2, -size / 2],
-            [size / 2, size / 2],
-            [-size / 2, size / 2]
+            [-this.getSize() / 2, -this.getSize() / 2],
+            [this.getSize() / 2, -this.getSize() / 2],
+            [this.getSize() / 2, this.getSize() / 2],
+            [-this.getSize() / 2, this.getSize() / 2]
         ]
         let points = [];
         for (let dep of pointsDeplacements) {
@@ -83,6 +78,16 @@ class Coin extends Polygon {
             modified.addY(dep[1]);
             points.push(Point.fromLocation(modified, true));
         }
+        this.setPoints(points);
+    }
+
+    draw() {
+        if (this.taked) {
+            return;
+        }
+        let size = Location.size.width / 30;
+        this.size = size;
+        this.reloadPositions();
         this.step+= 0.2;
         let step = Math.round(this.step);
         if (step > this.maxstep) {

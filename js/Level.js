@@ -77,22 +77,60 @@ class Level {
             ctx.restore();
         }
 
+        var hover = null;
+        var clicked = null;
         this.getCollisions().forEach(e => {
-            e.draw();
+            if (e.hover) {
+                hover = e;
+            } else if (e.clicked) {
+                clicked = e;
+            } else {
+                e.draw();
+            }
         }, this);
         this.getPlateforms().forEach(e => {
-            e.draw();
+            if (e.hover) {
+                hover = e;
+            } else if (e.clicked) {
+                clicked = e;
+            } else {
+                e.draw();
+            }
         }, this);
         this.getActionZones().forEach(e => {
-            e.draw();
+            if (e.hover) {
+                hover = e;
+            } else if (e.clicked) {
+                clicked = e;
+            } else {
+                e.draw();
+            }
         }, this);
         this.getCoins().forEach(e => {
-            e.draw();
+            if (e.hover) {
+                hover = e;
+            } else if (e.clicked) {
+                clicked = e;
+            } else {
+                e.draw();
+            }
         }, this);
         perso.draw();
         this.getForegroundElements().forEach(e => {
-            e.draw();
+            if (e.hover) {
+                hover = e;
+            } else if (e.clicked) {
+                clicked = e;
+            } else {
+                e.draw();
+            }
         }, this);
+        if (hover) {
+            hover.draw();
+        }
+        if (clicked) {
+            clicked.draw();
+        }
     }
 
     seralize() {

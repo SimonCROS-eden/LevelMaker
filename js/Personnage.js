@@ -78,10 +78,10 @@ class Personnage extends Polygon {
                     this.fall_distance = 0;
                 }
                 for (let collision of collisions) {
+                    collision.setDirectionY(fall_speed);
                     if (this.jump <= 1) {
                         if (collision.getEjection() > 0) {
                             this.jump = collision.getEjection();
-                            collision.setDirectionY(fall_speed);
                         } else {
                             this.jump = 0;
                             if (this.keyboard.up) {

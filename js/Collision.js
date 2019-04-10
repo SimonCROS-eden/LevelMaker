@@ -23,16 +23,19 @@ class Collision extends Polygon {
     }
 
     setDirectionY(dy, parents) {
-        this.dy = dy * this.flexibility;
-        if (!parents) {
-            parents = [];
+        for (let point of this.getPoints()) {
+            point.setDirectionY(dy);
         }
-        parents.push(this);
-        for (let e of level.getCollisions()) {
-            if (e != this && parents.indexOf(e) == -1 && e.getFlexibility() > 0 && e.isPolygonsIntersecting(this)) {
-                e.setDirectionY(this.dy * e.flexibility, parents);
-            }
-        }
+        // this.dy = dy * this.flexibility;
+        // if (!parents) {
+        //     parents = [];
+        // }
+        // parents.push(this);
+        // for (let e of level.getCollisions()) {
+        //     if (e != this && parents.indexOf(e) == -1 && e.getFlexibility() > 0 && e.isPolygonsIntersecting(this)) {
+        //         e.setDirectionY(this.dy * e.flexibility, parents);
+        //     }
+        // }
     }
 
     getEjection() {
@@ -53,7 +56,9 @@ class Collision extends Polygon {
         ctx.closePath();
         ctx.fill();
 
-        if (this.hover) {
+        if (this.clicked) {
+            this.clickStyle();
+        } else if (this.hover) {
             this.hoverStyle();
         }
 
@@ -70,5 +75,37 @@ class Collision extends Polygon {
         ctx.closePath();
         ctx.lineWidth = 2;
         ctx.stroke();
+
+        for (let point of this.points) {
+            ctx.fillStyle = "black";
+            if (point.selected) {
+                ctx.fillStyle = "white";
+            }
+            ctx.beginPath();
+            ctx.arc(point.getRenderX(), point.getRenderY(), 5, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    clickStyle() {
+        ctx.beginPath();
+        ctx.strokeStyle = "red";
+        ctx.moveTo(this.points[0].getRenderX(), this.points[0].getRenderY() + (this.points[0].isSolid() ? 0 : this.dy));
+        for (let point of this.points) {
+            ctx.lineTo(point.getRenderX(), point.getRenderY() + (point.isSolid() ? 0 : this.dy));
+        }
+        ctx.closePath();
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        for (let point of this.points) {
+            ctx.fillStyle = "red";
+            if (point.selected) {
+                ctx.fillStyle = "white";
+            }
+            ctx.beginPath();
+            ctx.arc(point.getRenderX(), point.getRenderY(), 5, 0, Math.PI * 2);
+            ctx.fill();
+        }
     }
 }

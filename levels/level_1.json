@@ -1,1 +1,75 @@
-{"collisions":[{"points":[{"x":40,"y":460,"solid":true},{"x":80,"y":460,"solid":true},{"x":80,"y":500,"solid":true},{"x":40,"y":500,"solid":true}],"color":"brown","ejection":0,"dy":0,"dx":0,"flexibility":0},{"points":[{"x":200,"y":420,"solid":true},{"x":240,"y":420,"solid":true},{"x":240,"y":460,"solid":true},{"x":200,"y":460,"solid":true}],"color":"rgb(203, 69, 33)","ejection":0,"dy":0,"dx":0,"flexibility":0},{"points":[{"x":200,"y":390,"solid":false},{"x":210,"y":390,"solid":false},{"x":240,"y":420,"solid":true},{"x":230,"y":420,"solid":true}],"color":"brown","ejection":0,"dy":0,"dx":0,"flexibility":1},{"points":[{"x":240,"y":390,"solid":false},{"x":230,"y":390,"solid":false},{"x":200,"y":420,"solid":true},{"x":210,"y":420,"solid":true}],"color":"brown","ejection":0,"dy":0,"dx":0,"flexibility":1},{"points":[{"x":200,"y":390,"solid":true},{"x":210,"y":390,"solid":true},{"x":210,"y":420,"solid":true},{"x":200,"y":420,"solid":true}],"color":"transparent","ejection":0,"dy":0,"dx":0,"flexibility":0},{"points":[{"x":240,"y":390,"solid":true},{"x":230,"y":390,"solid":true},{"x":230,"y":420,"solid":true},{"x":240,"y":420,"solid":true}],"color":"transparent","ejection":0,"dy":0,"dx":0,"flexibility":0},{"points":[{"x":200,"y":380,"solid":false},{"x":240,"y":380,"solid":false},{"x":240,"y":390,"solid":false},{"x":200,"y":390,"solid":false}],"color":"rgb(203, 69, 33)","ejection":10,"dy":0,"dx":0,"flexibility":8},{"points":[{"x":420,"y":320,"solid":true},{"x":460,"y":320,"solid":true},{"x":460,"y":360,"solid":true},{"x":420,"y":360,"solid":true}],"color":"rgb(203, 69, 33)","ejection":0,"dy":0,"dx":0,"flexibility":0},{"points":[{"x":420,"y":290,"solid":false},{"x":430,"y":290,"solid":false},{"x":460,"y":320,"solid":true},{"x":450,"y":320,"solid":true}],"color":"brown","ejection":0,"dy":0,"dx":0,"flexibility":1},{"points":[{"x":460,"y":290,"solid":false},{"x":450,"y":290,"solid":false},{"x":420,"y":320,"solid":true},{"x":430,"y":320,"solid":true}],"color":"brown","ejection":0,"dy":0,"dx":0,"flexibility":1},{"points":[{"x":420,"y":290,"solid":true},{"x":430,"y":290,"solid":true},{"x":430,"y":320,"solid":true},{"x":420,"y":320,"solid":true}],"color":"transparent","ejection":0,"dy":0,"dx":0,"flexibility":0},{"points":[{"x":460,"y":290,"solid":true},{"x":450,"y":290,"solid":true},{"x":450,"y":320,"solid":true},{"x":460,"y":320,"solid":true}],"color":"transparent","ejection":0,"dy":0,"dx":0,"flexibility":0},{"points":[{"x":420,"y":280,"solid":false},{"x":460,"y":280,"solid":false},{"x":460,"y":290,"solid":false},{"x":420,"y":290,"solid":false}],"color":"rgb(203, 69, 33)","ejection":10,"dy":0,"dx":0,"flexibility":8},{"points":[{"x":580,"y":200,"solid":false},{"x":630,"y":200,"solid":false},{"x":630,"y":250,"solid":false},{"x":580,"y":250,"solid":false}],"color":"rgb(22, 157, 0)","ejection":0,"dy":0,"dx":0,"flexibility":0},{"points":[{"x":600,"y":250,"solid":false},{"x":630,"y":250,"solid":false},{"x":630,"y":500,"solid":false},{"x":600,"y":500,"solid":false}],"color":"rgb(22, 157, 0)","ejection":0,"dy":0,"dx":0,"flexibility":0},{"points":[{"x":630,"y":480,"solid":false},{"x":670,"y":480,"solid":false},{"x":670,"y":500,"solid":false},{"x":630,"y":500,"solid":false}],"color":"rgb(22, 157, 0)","ejection":0,"dy":0,"dx":0,"flexibility":0},{"points":[{"x":670,"y":250,"solid":false},{"x":670,"y":500,"solid":false},{"x":700,"y":500,"solid":false},{"x":700,"y":250,"solid":false}],"color":"rgb(22, 157, 0)","ejection":0,"dy":0,"dx":0,"flexibility":0},{"points":[{"x":670,"y":200,"solid":false},{"x":670,"y":250,"solid":false},{"x":720,"y":250,"solid":false},{"x":720,"y":200,"solid":false}],"color":"rgb(22, 157, 0)","ejection":0,"dy":0,"dx":0,"flexibility":0}],"plateforms":[{"location":{"x":400,"y":100},"size":{"x":40,"y":11},"color":"rgb(148, 0, 45)"},{"location":{"x":630,"y":200},"size":{"x":40,"y":11},"color":"rgb(22, 157, 0)"}],"rectangularCollisions":[],"coins":[{"points":[{"x":195.26666666666665,"y":325.26666666666665,"solid":true},{"x":244.73333333333335,"y":325.26666666666665,"solid":true},{"x":244.73333333333335,"y":374.73333333333335,"solid":true},{"x":195.26666666666665,"y":374.73333333333335,"solid":true}],"location":{"x":220,"y":350},"step":0,"maxstep":5,"imageSize":84,"size":49.46666666666667,"borders":2,"taked":false,"img":null},{"points":[{"x":415.26666666666665,"y":225.26666666666665,"solid":true},{"x":464.73333333333335,"y":225.26666666666665,"solid":true},{"x":464.73333333333335,"y":274.73333333333335,"solid":true},{"x":415.26666666666665,"y":274.73333333333335,"solid":true}],"location":{"x":440,"y":250},"step":0,"maxstep":5,"imageSize":84,"size":49.46666666666667,"borders":2,"taked":false,"img":null},{"points":[{"x":395.26666666666665,"y":55.266666666666666,"solid":true},{"x":444.73333333333335,"y":55.266666666666666,"solid":true},{"x":444.73333333333335,"y":104.73333333333333,"solid":true},{"x":395.26666666666665,"y":104.73333333333333,"solid":true}],"location":{"x":420,"y":80},"step":0,"maxstep":5,"imageSize":84,"size":49.46666666666667,"borders":2,"taked":false,"img":null},{"points":[{"x":625.2666666666667,"y":155.26666666666665,"solid":true},{"x":674.7333333333333,"y":155.26666666666665,"solid":true},{"x":674.7333333333333,"y":204.73333333333335,"solid":true},{"x":625.2666666666667,"y":204.73333333333335,"solid":true}],"location":{"x":650,"y":180},"step":0,"maxstep":5,"imageSize":84,"size":49.46666666666667,"borders":2,"taked":false,"img":null}],"foreground":[{"points":[{"x":629,"y":201,"solid":false},{"x":671,"y":201,"solid":false},{"x":671,"y":480,"solid":false},{"x":629,"y":480,"solid":false}],"color":"rgb(22, 157, 0)"}],"actionzones":[{"points":[{"x":630,"y":240,"solid":false},{"x":670,"y":240,"solid":false},{"x":670,"y":480,"solid":false},{"x":630,"y":480,"solid":false}],"color":"rgba(219, 17, 17, .2)","gameaction":0}],"spawnpoint":{"x":50,"y":440},"backgroundColor":"66, 188, 244"}
+{
+    "collisions": [{
+        "points": [{
+            "x": 0,
+            "y": 460,
+            "resistance": 0,
+            "restore": false,
+            "solid": true
+        }, {
+            "x": 888,
+            "y": 460,
+            "resistance": 0,
+            "restore": false,
+            "solid": true
+        }, {
+            "x": 888,
+            "y": 500,
+            "resistance": 0,
+            "restore": false,
+            "solid": true
+        }, {
+            "x": 0,
+            "y": 500,
+            "resistance": 0,
+            "restore": false,
+            "solid": true
+        }],
+        "color": "brown",
+        "ejection": 0,
+        "dy": 0,
+        "dx": 0,
+        "flexibility": 0
+    },{
+        "points": [{
+            "x": 200,
+            "y": 370,
+            "resistance": 10,
+            "restore": false,
+            "solid": false
+        }, {
+            "x": 240,
+            "y": 370,
+            "resistance": 10,
+            "restore": false,
+            "solid": false
+        }, {
+            "x": 240,
+            "y": 400,
+            "resistance": 10,
+            "restore": false,
+            "solid": false
+        }, {
+            "x": 200,
+            "y": 400,
+            "resistance": 10,
+            "restore": false,
+            "solid": false
+        }],
+        "color": "gray",
+        "ejection": 0,
+        "dy": 0,
+        "dx": 0,
+        "flexibility": 0
+    }],
+    "plateforms": [],
+    "rectangularCollisions": [],
+    "coins": [],
+    "actionzones": [],
+    "foreground": [],
+    "spawnpoint": {
+        "x": 50,
+        "y": 440
+    },
+    "backgroundColor": "66, 188, 244"
+}

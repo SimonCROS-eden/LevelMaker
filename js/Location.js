@@ -1,10 +1,16 @@
 class Location {
 
-    static originalSize = {width: 888, height: 500};
+    static originalSize = {
+        width: 888,
+        height: 500
+    };
     static size = Location.originalSize;
 
     static setSize(width, height) {
-        Location.size = {width, height};
+        Location.size = {
+            width,
+            height
+        };
     }
 
     static unserialize(location) {
@@ -40,27 +46,19 @@ class Location {
         this.y -= y;
     }
 
-    getX() {
-        return this.x;
-    }
-
-    getY() {
-        return this.y;
-    }
-
     getRenderX() {
-        return this.x * Location.size.width / Location.originalSize.width;
+        return this.getX() * Location.size.width / Location.originalSize.width;
     }
 
     getRenderY() {
-        return this.y * Location.size.height / Location.originalSize.height;
+        return this.getY() * Location.size.height / Location.originalSize.height;
     }
 
     clone() {
         return new Location(this.getX(), this.getY());
     }
 
-    distance(location) {
-
+    distanceTo(location) {
+        return Math.sqrt(Math.pow((this.getX() - location.getX()), 2) + Math.pow((this.getY() - location.getY()), 2));
     }
 }
