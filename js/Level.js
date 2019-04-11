@@ -8,6 +8,9 @@ class Level {
         this.setSpawnPoint(spawnpoint);
         this.backgroundColor = backgroundColor;
         this.seralized = JSON.stringify(this);
+        this.getCollisions().forEach(e => {
+            e.registerPointsPolygon();
+        });
 
         // ONLY SERALIZATION
         this.rectangularCollisions = rectangularCollisions;

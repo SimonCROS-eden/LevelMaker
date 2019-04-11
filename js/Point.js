@@ -9,7 +9,22 @@ class Point extends Location {
         this.dx = 0;
         this.dy = 0;
         this.solid = solid || false;
-        setInterval(this.actualise, this)
+        this.polygon = null;
+        this.index = -1;
+        movingPoints.push(this);
+    }
+
+    setPolygon(polygon, index) {
+        this.polygon = polygon;
+        this.index = index;
+    }
+
+    getPolygon() {
+        return this.polygon;
+    }
+
+    getIndex() {
+        return this.index;
     }
 
     setSolid(solid) {
@@ -27,16 +42,17 @@ class Point extends Location {
     }
 
     setDirectionY(dy, used) {
+        let first = used == undefined;
         if (!this.isSolid()) {
             this.dy += dy;
             if (!used) {
                 var used = [];
             }
-            used.push(this)
+            used.push(this);
             for (let collision of level.getCollisions()) {
-                if (collision.isPolygonsIntersecting(this)) {
+                if (collision != this && collision.isPolygonsIntersecting(this)) {
                     for (let point of collision.getPoints()) {
-                        if (point != this && used.indexOf(point) == -1 && point.getRenderX() == this.getRenderX() && point.getRenderY() == this.getRenderY()) {
+                        if (point != this && point.dy < 1 && used.indexOf(point) == -1 && Math.max(point.getRenderX(), this.getRenderX()) - Math.min(point.getRenderX(), this.getRenderX()) < 1 && Math.max(point.getRenderY(), this.getRenderY()) - Math.min(point.getRenderY(), this.getRenderY())) {
                             point.setDirectionY(dy, used);
                             used.push(point);
                         }
