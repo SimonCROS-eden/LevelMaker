@@ -15,11 +15,6 @@ function hover(e) {
         generatorMouseX = Math.round(((e.pageX - canvas.offsetLeft) * Location.originalSize.width / Location.size.width) / 10) * 10;
         generatorMouseY = Math.round(((e.pageY - canvas.offsetTop) * Location.originalSize.height / Location.size.height) / 10) * 10;
         if (clickedElement && selectedPoint && moving) {
-            if (Collision.prototype.isPrototypeOf(clickedElement) && e.shiftKey) {
-                for (let collision of level.getCollisions()) {
-                    collision.showPoints = true;
-                }
-            } else {
                 let diffX = generatorMouseX - clickPoint.x;
                 let diffY = generatorMouseY - clickPoint.y;
                 selectedPoint.addX(diffX);
@@ -32,7 +27,6 @@ function hover(e) {
                     x: generatorMouseX,
                     y: generatorMouseY
                 };
-            }
         } else if (clickedElement && moving) {
             let diffX = generatorMouseX - clickPoint.x;
             let diffY = generatorMouseY - clickPoint.y;
@@ -127,6 +121,9 @@ function clickStart(e) {
             x: generatorMouseX,
             y: generatorMouseY
         };
+        if (Collision.prototype.isPrototypeOf(getSelected(p)) && e.shiftKey) {
+            selectedPoint.solid = !selectedPoint.solid;
+        }
     }
     if (getSelected(p).type === 0) {
         if (clickedElement) {

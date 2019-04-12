@@ -170,12 +170,6 @@ class Personnage extends Polygon {
         let location = level.getSpawnPoint();
         this.setLocation(location);
         this.reloadPoints();
-        this.keyboard = {
-            right: false,
-            left: false,
-            up: false,
-            any: false,
-        };
         this.jump = 0;
         this.dx = 0;
     }

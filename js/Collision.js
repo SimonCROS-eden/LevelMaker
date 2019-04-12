@@ -90,6 +90,9 @@ class Collision extends Polygon {
 
         for (let point of this.points) {
             ctx.fillStyle = "black";
+            if (point.solid) {
+                ctx.fillStyle = "yellow";
+            }
             if (point.selected) {
                 ctx.fillStyle = "white";
             }
@@ -112,6 +115,9 @@ class Collision extends Polygon {
 
         for (let point of this.points) {
             ctx.fillStyle = "red";
+            if (point.solid) {
+                ctx.fillStyle = "yellow";
+            }
             if (point.selected) {
                 ctx.fillStyle = "white";
             }
