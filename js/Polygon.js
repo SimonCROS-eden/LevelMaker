@@ -12,6 +12,12 @@ class Polygon extends Collidable {
         this.points = points;
     }
 
+    registerPointsPolygon() {
+        for (let i = 0; i < this.getPoints().length; i++) {
+            this.getPoints()[i].setPolygon(this, i);
+        }
+    }
+
     getPoints() {
         return this.points;
     }

@@ -24,7 +24,9 @@ class Collision extends Polygon {
 
     setDirectionY(dy, parents) {
         for (let point of this.getPoints()) {
-            point.setDirectionY(dy);
+            if (point.dy < 1) {
+                point.setDirectionY(dy);
+            }
         }
         // this.dy = dy * this.flexibility;
         // if (!parents) {
@@ -60,6 +62,16 @@ class Collision extends Polygon {
             this.clickStyle();
         } else if (this.hover) {
             this.hoverStyle();
+        } else if (this.showPoints) {
+            for (let point of this.points) {
+                ctx.fillStyle = "black";
+                if (point.selected) {
+                    ctx.fillStyle = "white";
+                }
+                ctx.beginPath();
+                ctx.arc(point.getRenderX(), point.getRenderY(), 5, 0, Math.PI * 2);
+                ctx.fill();
+            }
         }
 
         ctx.restore();
@@ -78,6 +90,9 @@ class Collision extends Polygon {
 
         for (let point of this.points) {
             ctx.fillStyle = "black";
+            if (point.solid) {
+                ctx.fillStyle = "yellow";
+            }
             if (point.selected) {
                 ctx.fillStyle = "white";
             }
@@ -100,6 +115,9 @@ class Collision extends Polygon {
 
         for (let point of this.points) {
             ctx.fillStyle = "red";
+            if (point.solid) {
+                ctx.fillStyle = "yellow";
+            }
             if (point.selected) {
                 ctx.fillStyle = "white";
             }

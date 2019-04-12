@@ -21,6 +21,7 @@ class Personnage extends Polygon {
         this.dx = 0;
         this.slow = null;
         this.gold = 0;
+        this.life = 100;
 
         this.moveSheduler = setInterval(this.move, 10);
         document.addEventListener("keydown", this.keyHandler);
@@ -169,12 +170,6 @@ class Personnage extends Polygon {
         let location = level.getSpawnPoint();
         this.setLocation(location);
         this.reloadPoints();
-        this.keyboard = {
-            right: false,
-            left: false,
-            up: false,
-            any: false,
-        };
         this.jump = 0;
         this.dx = 0;
     }
@@ -246,6 +241,11 @@ class Personnage extends Polygon {
         this.ctx.beginPath();
         this.ctx.rect(this.getLocation().getRenderX(), this.getLocation().getRenderY(), this.getSize().getRenderX(), this.getSize().getRenderY());
         this.ctx.fillStyle = this.color;
+        this.ctx.fill();
+
+        this.ctx.fillStyle = "rgb(214, 6, 6)";
+        this.ctx.beginPath();
+        this.ctx.rect(canvas.width - 210, 10, 200 - (100 - this.life) * 2, 20);
         this.ctx.fill();
 
         this.ctx.strokeStyle = "black";

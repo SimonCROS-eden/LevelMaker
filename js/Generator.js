@@ -15,24 +15,18 @@ function hover(e) {
         generatorMouseX = Math.round(((e.pageX - canvas.offsetLeft) * Location.originalSize.width / Location.size.width) / 10) * 10;
         generatorMouseY = Math.round(((e.pageY - canvas.offsetTop) * Location.originalSize.height / Location.size.height) / 10) * 10;
         if (clickedElement && selectedPoint && moving) {
-            let diffX = generatorMouseX - clickPoint.x;
-            let diffY = generatorMouseY - clickPoint.y;
-            selectedPoint.addX(diffX);
-            selectedPoint.addY(diffY);
-            if (selectedPoint.originalX) {
-                selectedPoint.originalX += diffX;
-                selectedPoint.originalY += diffY;
-            }
-            clickPoint = {
-                x: generatorMouseX,
-                y: generatorMouseY
-            };
-
-            if (Collision.prototype.isPrototypeOf(clickedElement)) {
-                if (e.shiftKey) {
-
+                let diffX = generatorMouseX - clickPoint.x;
+                let diffY = generatorMouseY - clickPoint.y;
+                selectedPoint.addX(diffX);
+                selectedPoint.addY(diffY);
+                if (selectedPoint.originalX) {
+                    selectedPoint.originalX += diffX;
+                    selectedPoint.originalY += diffY;
                 }
-            }
+                clickPoint = {
+                    x: generatorMouseX,
+                    y: generatorMouseY
+                };
         } else if (clickedElement && moving) {
             let diffX = generatorMouseX - clickPoint.x;
             let diffY = generatorMouseY - clickPoint.y;
@@ -127,6 +121,9 @@ function clickStart(e) {
             x: generatorMouseX,
             y: generatorMouseY
         };
+        if (Collision.prototype.isPrototypeOf(getSelected(p)) && e.shiftKey) {
+            selectedPoint.solid = !selectedPoint.solid;
+        }
     }
     if (getSelected(p).type === 0) {
         if (clickedElement) {
@@ -140,6 +137,12 @@ function clickEnd(e) {
     if (clickedElement) {
         moving = false;
         clickPoint = null;
+        if (selectedPoint) {
+            selectedPoint.selected = false;
+        }
         selectedPoint = null;
+    }
+    for (let collision of level.getCollisions()) {
+        collision.showPoints = false;
     }
 }
