@@ -17,8 +17,8 @@ class Location {
         return new Location(location.x, location.y)
     }
 
-    constructor(x, y) {        
-        this.x = x;        
+    constructor(x, y) {
+        this.x = x;
         this.y = y;
     }
 
@@ -26,7 +26,7 @@ class Location {
         this.x = x;
     }
 
-    setY(y) {        
+    setY(y) {
         this.y = y;
     }
 
@@ -58,7 +58,7 @@ class Location {
         return Math.floor(this.getX() * Location.size.width / Location.originalSize.width);
     }
 
-    getRenderY() {        
+    getRenderY() {
         return Math.floor(this.getY() * Location.size.height / Location.originalSize.height);
     }
 
