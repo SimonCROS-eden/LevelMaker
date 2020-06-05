@@ -1,0 +1,106 @@
+{
+    "collisions": [{
+        "points": [{
+            "x": 0,
+            "y": 460,
+            "flexibility": 0,
+            "restore": false,
+            "solid": true
+        }, {
+            "x": 888,
+            "y": 460,
+            "flexibility": 0,
+            "restore": false,
+            "solid": true
+        }, {
+            "x": 888,
+            "y": 500,
+            "flexibility": 0,
+            "restore": false,
+            "solid": true
+        }, {
+            "x": 0,
+            "y": 500,
+            "flexibility": 0,
+            "restore": false,
+            "solid": true
+        }],
+        "color": "brown",
+        "ejection": 0,
+        "dy": 0,
+        "dx": 0,
+        "flexibility": 0
+    },{
+        "points": [{
+            "x": 200,
+            "y": 370,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 240,
+            "y": 370,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 240,
+            "y": 400,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 200,
+            "y": 400,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }],
+        "color": "gray",
+        "ejection": 50,
+        "dy": 0,
+        "dx": 0,
+        "flexibility": 0
+    },{
+        "points": [{
+            "x": 200,
+            "y": 400,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 240,
+            "y": 400,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 240,
+            "y": 430,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }, {
+            "x": 200,
+            "y": 430,
+            "flexibility": 10,
+            "restore": true,
+            "solid": false
+        }],
+        "color": "blue",
+        "ejection": 5,
+        "dy": 0,
+        "dx": 0,
+        "flexibility": 0
+    }],
+    "plateforms": [],
+    "rectangularCollisions": [],
+    "coins": [],
+    "actionzones": [],
+    "foreground": [],
+    "spawnpoint": {
+        "x": 50,
+        "y": 440
+    },
+    "backgroundColor": "66, 188, 244"
+}
